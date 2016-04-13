@@ -4,9 +4,11 @@ var textAge = "thirty four"
 var city = "seattle";
 
 
+
+
 var answerName = prompt ('What is my name?');
 if (answerName.toLowerCase() === name) {
-  alert ('Great, you guessed it right');
+alert ('Great, you guessed it right');
   console.log ('User passed the test');
 }  else {
   alert ('Sorry, you guessed wrong');
@@ -29,4 +31,5 @@ if (answerCity.toLowerCase() === city) {
 } else {
   alert ('Sorry, you guessed wrong')
   console.log ('User failed the test');
+
 }
