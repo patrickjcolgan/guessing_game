@@ -40,6 +40,7 @@ var counter = 0;
 
 var userName = prompt("Hey, what's your name?");
  //alert?????
+ var 
 
 var els = [pElOne, pElTwo, pElThree];
 var questions [
