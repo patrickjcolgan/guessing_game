@@ -5,7 +5,6 @@ var pElFour = document.getElementById("p4");
 var counter = 0;
 
 var userName = prompt("Hey, what's your name?");
-
 var els = [pElOne, pElTwo, pElThree, pElFour];
 
 var questions = [
@@ -24,11 +23,9 @@ var answers = [
 
 function game(question, answer, element){
   var userInput = prompt(question).toLowerCase();
-
   if (isNaN(parseInt(userInput)) === false) {
     userInput = parseInt(userInput);
   }
-
   if (typeof answer === 'number') {
     while (userInput !== answer) {
       if (userInput < answer) {
@@ -39,22 +36,18 @@ function game(question, answer, element){
         userInput = parseInt(prompt('Guess again.'))
       }
     }
-    element.textContent = 'Great, you guessed the number right';}
+    //this handles correct amount of answer
+    element.textContent = 'Great, you guessed the number right';
+//}
+  } else {
+    if (userInput === answer) { // input matches answer
+      element.textContent = 'Great, you guessed it right';
+      counter++
+    } else {
+      element.textContent = 'Sorry, you guessed wrong';
+    }
   }
-    // need to handle getting the correct number here
-
-  // else {
-  //   if (userInput === answer) { // input matches answer
-  //
-  //     element.textContent = 'Great, you guessed it right';
-  //     counter++
-  //   } else {
-  //     element.textContent = 'Sorry, you guessed wrong';
-  //   }
-  // }
-
-
-
-for (i = 0; i < questions.length; i++){  //WHICH ARRAY GOES HERE???
+}
+for (i = 0; i < questions.length; i++){
   game(questions[i], answers[i], els[i]);
 }
