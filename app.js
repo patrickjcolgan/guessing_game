@@ -1,54 +1,53 @@
-// var name =  "nurbek"
-// var age = "34";
-// var textAge = "thirty four"
-// var city = "seattle";
-//
-//
-//
-//
-// var answerName = prompt ('What is my name?');
-// if (answerName.toLowerCase() === name) {
-// alert ('Great, you guessed it right');
-//   console.log ('User passed the test');
-// }  else {
-//   alert ('Sorry, you guessed wrong');
-// console.log ('User failed the test');
-// }
-//
-// var answerAge = prompt ('What is my age?');
-// if (age === answerAge || answerAge.toLowerCase() === textAge){
-//   alert ('Great, you guessed it right');
-//   console.log('His or her\'s age match to this kind of work');
-// } else {
-//   alert ('Sorry, you guessed wrong');
-//   console.log('His or her\'s age DOES NOT match to this kind of work');
-// }
-//
-// var answerCity = prompt ('What is my city?')
-// if (answerCity.toLowerCase() === city) {
-//   alert ('Great, you guessed it right');
-//   console.log('User passed the test');
-// } else {
-//   alert ('Sorry, you guessed wrong')
-//   console.log ('User failed the test');
-//
-// }
 var pElOne = document.getElementById("p1");
 var pElTwo = document.getElementById("p2");
 var pElThree = document.getElementById("p3");
+var pElFour = document.getElementById("p4");
 var counter = 0;
 
 var userName = prompt("Hey, what's your name?");
- //alert?????
+var els = [pElOne, pElTwo, pElThree, pElFour];
 
-var els = [pElOne, pElTwo, pElThree];
-var questions [
+var questions = [
  "Do you think my name is Nurbek or Sally?",
- "Do you think I am from Kyrgyzstan or Texas?",
- "Is tennis my favorite hobby?"
+ "Do you think I am from here or Texas?",
+ "Is tennis my favorite hobby, Yes or No ?",
+  "Guess a number between 1-10"
 ];
-var answers [
- "Nurbek",
- "Kyrgyzstan",
- "Tennis"
+
+var answers = [
+ "nurbek",
+ "here",
+ "yes",
+ 4
 ];
+
+function game(question, answer, element){
+  var userInput = prompt(question).toLowerCase();
+  if (isNaN(parseInt(userInput)) === false) {
+    userInput = parseInt(userInput);
+  }
+  if (typeof answer === 'number') {
+    while (userInput !== answer) {
+      if (userInput < answer) {
+        element.textContent = 'your guess is too low';
+        userInput = parseInt(prompt('Guess again.'))
+      } else if (userInput > answer) {
+        element.textContent = 'your guess is too high';
+        userInput = parseInt(prompt('Guess again.'))
+      }
+    }
+    //this handles correct amount of answer
+    element.textContent = 'Great, you guessed the number right';
+//}
+  } else {
+    if (userInput === answer) { // input matches answer
+      element.textContent = 'Great, you guessed it right';
+      counter++
+    } else {
+      element.textContent = 'Sorry, you guessed wrong';
+    }
+  }
+}
+for (i = 0; i < questions.length; i++){
+  game(questions[i], answers[i], els[i]);
+}
