@@ -5,21 +5,21 @@ var pElFour = document.getElementById("p4");
 var pElFive = document.getElementById("p5");
 var counter = 0;
 
-//var userName = prompt("Hey, what's your name?");
+var userName = prompt("Hey, what's your name?");
 
 var els = [pElOne, pElTwo, pElThree, pElFour, pElFive];
 var questions = [
  "Do you think my name is Nurbek or Sally?",
  "Do you think I am from here or Texas?",
  "Is tennis my favorite hobby?",
- "How old is my son?"
+ "How old is my son?",
  "Guess a number between 1-10"
 ];
 var answers = [
  "nurbek",
  "here",
  "yes",
- '6'
+ '6',
  4
 ];
 
