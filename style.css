@@ -1,0 +1,17 @@
+* {
+  background-color: #dddddd;
+  /*font-family: 'pacifico', sans-serif;*/
+}
+
+h1 {
+  font-family: 'pacifico', sans-serif;
+  text-align: center;
+}
+
+.reply,  .mainnavs, .accomplishments {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none; 
+}
